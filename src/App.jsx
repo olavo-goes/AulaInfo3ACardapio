@@ -74,6 +74,13 @@ console.table(listaProdutosPedidos)
 
     <div className="bloco-pedidos">
         <p>meus pedidos</p>
+        <table>
+            <tr>
+                <th>pedido</th>
+                <th>produto</th>
+                <th>preço</th>
+            </tr>
+        </table>
             {
                 listaProdutosPedidos.map((produto) => (
                     <div key={produto.id}>

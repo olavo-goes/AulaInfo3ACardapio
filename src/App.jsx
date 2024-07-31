@@ -61,6 +61,11 @@ export default function App() {
 
 console.table(listaProdutosPedidos)
 
+    const removerItem = (id) => {
+        let listaAux = listaProdutosPedidos.filter((pedido) => pedido.id !== id)
+        setPedidos(listaAux)
+    }
+
     return (
        <div className="bloco-principal">
         <div className="bloco-produtos">
@@ -72,6 +77,7 @@ console.table(listaProdutosPedidos)
             </div>)}
        </div>
 
+
     <div className="bloco-pedidos">
         <p>meus pedidos</p>
         <table>
@@ -81,6 +87,7 @@ console.table(listaProdutosPedidos)
                 <th>preço</th>
             </tr>
         </table>
+
             {
                 listaProdutosPedidos.map((produto) => (
                     <div key={produto.id}>
@@ -89,6 +96,9 @@ console.table(listaProdutosPedidos)
                                 <td><img src={produto.imagem}></img></td>
                                 <td>{produto.item}</td>
                                 <td>{produto.preco}</td>
+                                <td>
+                                    <button onClick={() => removerItem(produto.id)}>X</button>
+                                </td>
                             </tr>
                         </table>
                     </div>

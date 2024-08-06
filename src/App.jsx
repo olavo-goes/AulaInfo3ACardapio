@@ -61,9 +61,14 @@ export default function App() {
 
 console.table(listaProdutosPedidos)
 
-    const removerItem = (id) => {
+    const removerItem = (id, listaProdutosPedidos) => {
         let listaAux = listaProdutosPedidos.filter((pedido) => pedido.id !== id)
-        setPedidos(listaAux)
+        if(listaAux !== pedido.id){
+            return listaAux
+        }
+        else{
+            return null
+        }
     }
 
     return (

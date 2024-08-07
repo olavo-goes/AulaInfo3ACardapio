@@ -63,11 +63,17 @@ console.table(listaProdutosPedidos)
 
     const removerItem = (id, listaProdutosPedidos) => {
         let listaAux = listaProdutosPedidos.filter((pedido) => pedido.id !== id)
-        if(listaAux !== pedido.id){
-            return listaAux
+        if(remover == false){
+            if(pedido.id !== id){
+                return true
+            }
+            else{
+                remover = true
+                return null
+            }
         }
         else{
-            return null
+            return produto
         }
     }
 
